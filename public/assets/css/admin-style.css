@@ -1,0 +1,26 @@
+.sidenav {
+    height: 100%;
+    width: 320px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #0553DA;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-radius: 0px 88px 0px 0px;
+}
+
+.main {
+    margin-left: 330px;
+    /* Same as the width of the sidenav */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+}

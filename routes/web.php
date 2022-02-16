@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Landing\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// start route landing
+
+
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+
+
+// end route landing
+
+// start route admin
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+});
+
+// end route admin
